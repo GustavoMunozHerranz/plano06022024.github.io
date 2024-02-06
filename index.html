@@ -1,0 +1,529 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="stylesheet" href="css/leaflet.css">
+        <link rel="stylesheet" href="css/qgis2web.css"><link rel="stylesheet" href="css/fontawesome-all.min.css">
+        <style>
+        #map {
+            width: 1065px;
+            height: 813px;
+        }
+        </style>
+        <title></title>
+    </head>
+    <body>
+        <div id="map">
+        </div>
+        <script src="js/qgis2web_expressions.js"></script>
+        <script src="js/leaflet.js"></script>
+        <script src="js/leaflet.rotatedMarker.js"></script>
+        <script src="js/leaflet.pattern.js"></script>
+        <script src="js/leaflet-hash.js"></script>
+        <script src="js/Autolinker.min.js"></script>
+        <script src="js/rbush.min.js"></script>
+        <script src="js/labelgun.min.js"></script>
+        <script src="js/labels.js"></script>
+        <script src="data/PLANOS2024PLANOS_1.js"></script>
+        <script>
+        var map = L.map('map', {
+            zoomControl:true, maxZoom:28, minZoom:1
+        }).fitBounds([[41.398725963161674,-5.7539465004113195],[42.267435623472565,-4.225717112804782]]);
+        var hash = new L.Hash(map);
+        map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
+        var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
+        var bounds_group = new L.featureGroup([]);
+        function setBounds() {
+        }
+        map.createPane('pane_GoogleHybrid_0');
+        map.getPane('pane_GoogleHybrid_0').style.zIndex = 400;
+        var layer_GoogleHybrid_0 = L.tileLayer('https://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', {
+            pane: 'pane_GoogleHybrid_0',
+            opacity: 1.0,
+            attribution: '',
+            minZoom: 1,
+            maxZoom: 28,
+            minNativeZoom: 0,
+            maxNativeZoom: 18
+        });
+        layer_GoogleHybrid_0;
+        map.addLayer(layer_GoogleHybrid_0);
+        function pop_PLANOS2024PLANOS_1(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(feature.properties['fid'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">dn_surface</th>\
+                        <td>' + (feature.properties['dn_surface'] !== null ? autolinker.link(feature.properties['dn_surface'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['uso_sigpac'] !== null ? autolinker.link(feature.properties['uso_sigpac'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['idPanel'] !== null ? autolinker.link(feature.properties['idPanel'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['DETALLES_Poblaci�n'] !== null ? autolinker.link(feature.properties['DETALLES_Poblaci�n'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['DETALLES_Referencia catastral'] !== null ? autolinker.link(feature.properties['DETALLES_Referencia catastral'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['PAC'] !== null ? autolinker.link(feature.properties['PAC'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">CULTIVO 2024</th>\
+                        <td>' + (feature.properties['CULTIVO 2024'] !== null ? autolinker.link(feature.properties['CULTIVO 2024'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Propiedad'] !== null ? autolinker.link(feature.properties['Propiedad'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+        function style_PLANOS2024PLANOS_1_0(feature) {
+            var context = {
+                feature: feature,
+                variables: {}
+            };
+            // Start of if blocks and style check logic
+            if (exp_PLANOS2024PLANOS_1rule0_eval_expression(context)) {
+                  return {
+                pane: 'pane_PLANOS2024PLANOS_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(12,177,232,0.5019607843137255)',
+                interactive: true,
+            };
+                }
+                else if (exp_PLANOS2024PLANOS_1rule1_eval_expression(context)) {
+                  return {
+                pane: 'pane_PLANOS2024PLANOS_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(153,139,139,0.5019607843137255)',
+                interactive: true,
+            };
+                }
+                else if (exp_PLANOS2024PLANOS_1rule2_eval_expression(context)) {
+                  return {
+                pane: 'pane_PLANOS2024PLANOS_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(26,99,195,0.5019607843137255)',
+                interactive: true,
+            };
+                }
+                else if (exp_PLANOS2024PLANOS_1rule3_eval_expression(context)) {
+                  return {
+                pane: 'pane_PLANOS2024PLANOS_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(105,72,56,0.5019607843137255)',
+                interactive: true,
+            };
+                }
+                else if (exp_PLANOS2024PLANOS_1rule4_eval_expression(context)) {
+                  return {
+                pane: 'pane_PLANOS2024PLANOS_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(243,186,188,0.5019607843137255)',
+                interactive: true,
+            };
+                }
+                else if (exp_PLANOS2024PLANOS_1rule5_eval_expression(context)) {
+                  return {
+                pane: 'pane_PLANOS2024PLANOS_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,255,0,0.5019607843137255)',
+                interactive: true,
+            };
+                }
+                else if (exp_PLANOS2024PLANOS_1rule6_eval_expression(context)) {
+                  return {
+                pane: 'pane_PLANOS2024PLANOS_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(221,59,0,1.0)',
+                interactive: true,
+            };
+                }
+                else if (exp_PLANOS2024PLANOS_1rule7_eval_expression(context)) {
+                  return {
+                pane: 'pane_PLANOS2024PLANOS_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(229,160,18,1.0)',
+                interactive: true,
+            };
+                }
+                else if (exp_PLANOS2024PLANOS_1rule8_eval_expression(context)) {
+                  return {
+                pane: 'pane_PLANOS2024PLANOS_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(153,208,24,1.0)',
+                interactive: true,
+            };
+                }
+                else if (exp_PLANOS2024PLANOS_1rule9_eval_expression(context)) {
+                  return {
+                pane: 'pane_PLANOS2024PLANOS_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(24,41,27,1.0)',
+                interactive: true,
+            };
+                }
+                else if (exp_PLANOS2024PLANOS_1rule10_eval_expression(context)) {
+                  return {
+                pane: 'pane_PLANOS2024PLANOS_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(21,35,23,1.0)',
+                interactive: true,
+            };
+                }
+                else if (exp_PLANOS2024PLANOS_1rule11_eval_expression(context)) {
+                  return {
+                pane: 'pane_PLANOS2024PLANOS_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(117,43,140,1.0)',
+                interactive: true,
+            };
+                }
+                else if (exp_PLANOS2024PLANOS_1rule12_eval_expression(context)) {
+                  return {
+                pane: 'pane_PLANOS2024PLANOS_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(231,75,221,1.0)',
+                interactive: true,
+            };
+                }
+                else if (exp_PLANOS2024PLANOS_1rule13_eval_expression(context)) {
+                  return {
+                pane: 'pane_PLANOS2024PLANOS_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(140,204,207,1.0)',
+                interactive: true,
+            };
+                }
+                else if (exp_PLANOS2024PLANOS_1rule14_eval_expression(context)) {
+                  return {
+                pane: 'pane_PLANOS2024PLANOS_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(33,94,4,0.5019607843137255)',
+                interactive: true,
+            };
+                }
+                else if (exp_PLANOS2024PLANOS_1rule15_eval_expression(context)) {
+                  return {
+                pane: 'pane_PLANOS2024PLANOS_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(176,196,153,0.5019607843137255)',
+                interactive: true,
+            };
+                }
+                else if (exp_PLANOS2024PLANOS_1rule16_eval_expression(context)) {
+                  return {
+                pane: 'pane_PLANOS2024PLANOS_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(176,196,153,0.5019607843137255)',
+                interactive: true,
+            };
+                }
+                else if (exp_PLANOS2024PLANOS_1rule17_eval_expression(context)) {
+                  return {
+                pane: 'pane_PLANOS2024PLANOS_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(191,255,156,1.0)',
+                interactive: true,
+            };
+                }
+                else if (exp_PLANOS2024PLANOS_1rule18_eval_expression(context)) {
+                  return {
+                pane: 'pane_PLANOS2024PLANOS_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(133,182,111,1.0)',
+                interactive: true,
+            };
+                }
+                else if (exp_PLANOS2024PLANOS_1rule19_eval_expression(context)) {
+                  return {
+                pane: 'pane_PLANOS2024PLANOS_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(107,37,38,0.5019607843137255)',
+                interactive: true,
+            };
+                }
+                else if (exp_PLANOS2024PLANOS_1rule20_eval_expression(context)) {
+                  return {
+                pane: 'pane_PLANOS2024PLANOS_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(181,181,181,0.5019607843137255)',
+                interactive: true,
+            };
+                }
+                else if (exp_PLANOS2024PLANOS_1rule21_eval_expression(context)) {
+                  return {
+                pane: 'pane_PLANOS2024PLANOS_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(161,84,255,0.5019607843137255)',
+                interactive: true,
+            };
+                }
+                else if (exp_PLANOS2024PLANOS_1rule22_eval_expression(context)) {
+                  return {
+                pane: 'pane_PLANOS2024PLANOS_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,0,255,0.5019607843137255)',
+                interactive: true,
+            };
+                }
+                else if (exp_PLANOS2024PLANOS_1rule23_eval_expression(context)) {
+                  return {
+                pane: 'pane_PLANOS2024PLANOS_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,248,157,0.5019607843137255)',
+                interactive: true,
+            };
+                }
+                else if (exp_PLANOS2024PLANOS_1rule24_eval_expression(context)) {
+                  return {
+                pane: 'pane_PLANOS2024PLANOS_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(90,90,90,1.0)',
+                interactive: true,
+            };
+                }
+                else if (exp_PLANOS2024PLANOS_1rule25_eval_expression(context)) {
+                  return {
+                pane: 'pane_PLANOS2024PLANOS_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(125,139,143,0.0)',
+                interactive: true,
+            };
+                }
+            else {
+                return {fill: false, stroke: false};
+            }
+        }
+        map.createPane('pane_PLANOS2024PLANOS_1');
+        map.getPane('pane_PLANOS2024PLANOS_1').style.zIndex = 401;
+        map.getPane('pane_PLANOS2024PLANOS_1').style['mix-blend-mode'] = 'normal';
+        var layer_PLANOS2024PLANOS_1 = new L.geoJson(json_PLANOS2024PLANOS_1, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_PLANOS2024PLANOS_1',
+            layerName: 'layer_PLANOS2024PLANOS_1',
+            pane: 'pane_PLANOS2024PLANOS_1',
+            onEachFeature: pop_PLANOS2024PLANOS_1,
+            style: style_PLANOS2024PLANOS_1_0,
+        });
+        bounds_group.addLayer(layer_PLANOS2024PLANOS_1);
+        map.addLayer(layer_PLANOS2024PLANOS_1);
+        setBounds();
+        var i = 0;
+        layer_PLANOS2024PLANOS_1.eachLayer(function(layer) {
+            var context = {
+                feature: layer.feature,
+                variables: {}
+            };
+            layer.bindTooltip((layer.feature.properties['dn_surface'] !== null?String('<div style="color: #323232; font-size: 2pt; font-family: \'Arial\', sans-serif;">' + layer.feature.properties['dn_surface']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_PLANOS2024PLANOS_1'});
+            labels.push(layer);
+            totalMarkers += 1;
+              layer.added = true;
+              addLabel(layer, i);
+              i++;
+        });
+        resetLabels([layer_PLANOS2024PLANOS_1]);
+        map.on("zoomend", function(){
+            resetLabels([layer_PLANOS2024PLANOS_1]);
+        });
+        map.on("layeradd", function(){
+            resetLabels([layer_PLANOS2024PLANOS_1]);
+        });
+        map.on("layerremove", function(){
+            resetLabels([layer_PLANOS2024PLANOS_1]);
+        });
+        </script>
+    </body>
+</html>
